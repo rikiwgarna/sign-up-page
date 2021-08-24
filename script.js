@@ -29,6 +29,8 @@ function checkInput() {
   }
 
   if (emailVal === '') {
+    setErrorMsg(email, 'Email cannot be empty');
+  } else if (!isEmail(emailVal)) {
     setErrorMsg(email, 'Looks like this is not an email');
   } else {
     setSucces(email);
@@ -54,3 +56,17 @@ function setSucces(input) {
 
   formControl.classList.remove('error');
 }
+
+function isEmail(email) {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+// Empty the input when refresh the page
+window.onload = function () {
+  firstName.value = '';
+  lastName.value = '';
+  email.value = '';
+  password.value = '';
+};

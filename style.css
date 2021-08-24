@@ -228,3 +228,41 @@ i img {
 .error i img {
   visibility: visible;
 }
+
+@media only screen and (min-width: 40em) {
+  body {
+    background: url('./images/bg-intro-desktop.png') no-repeat center
+      center/cover;
+    background-color: var(--red);
+    height: 100vh;
+  }
+  .signup-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    padding: 5rem;
+  }
+
+  .intro {
+    align-self: center;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .intro-title {
+    padding: 0;
+    font-size: 3.5rem;
+  }
+
+  .sign-up {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* @media only screen and (min-width: 63em) {
+  .signup-section {
+    gap: 2;
+  }
+} */
